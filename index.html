@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Code Unlock</title>
+  <title>Code Unlock with Video Background</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 20px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Enter the Code:</h2>
-<input type="text" id="codeInput">
-<button onclick="checkCode()">Submit</button>
+<video autoplay muted loop id="bg-video">
+  <source src="your-video.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-<div id="output" style="margin-top: 20px; display: none;">
-  Secret Message: 🕵️ You've unlocked the hidden text!
+<div class="content">
+  <h2>Enter the Code:</h2>
+  <input type="text" id="codeInput">
+  <button onclick="checkCode()">Submit</button>
+
+  <div id="output">
+    Secret Message: 🕵️ You've unlocked the hidden text!
+  </div>
 </div>
 
 <script>
