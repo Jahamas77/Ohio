@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Darkness</title>
-  <style>
-    body {
-      background-color: black;
-      margin: 0;
-      height: 100vh;
-    }
-  </style>
+  <title>Code Unlock</title>
 </head>
 <body>
-  
-<!-- https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1JzfwnYBmWSreyR1aZQ8QCEHRsogHfM2PEIMDwegZMR0%2Fedit%3Fusp%3Dsharing -->
+
+<h2>Enter the Code:</h2>
+<input type="text" id="codeInput">
+<button onclick="checkCode()">Submit</button>
+
+<div id="output" style="margin-top: 20px; display: none;">
+  Secret Message: 🕵️ You've unlocked the hidden text!
+</div>
+
+<script>
+function checkCode() {
+  var correctCode = "1234";
+  var userInput = document.getElementById("codeInput").value;
+
+  if (userInput === correctCode) {
+    document.getElementById("output").style.display = "block";
+  } else {
+    document.getElementById("output").style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
